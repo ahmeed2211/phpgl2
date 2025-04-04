@@ -18,6 +18,20 @@ else {
 </head>
 <body>
     <h1>Compteur de visites</h1>
+    <style>
+        h1{
+            color: blue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        p{
+            color: black;
+            text-align : center;
+        }
+        form{
+            text-align: center;
+        }
+        </style>
     <?php
     if ($visites==1){
         echo "<p>Bienvenue sur notre site !</p>";
