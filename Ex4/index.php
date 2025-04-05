@@ -41,7 +41,7 @@ catch(PDOException $e){
                     <th>ID  </th>
                     <th>Nom </th>
                     <th>Date de Naissance  </th>
-                    <th>details</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody>
