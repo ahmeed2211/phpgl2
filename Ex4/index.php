@@ -19,6 +19,22 @@ catch(PDOException $e){
 <body>
 <div class="container mt-4">
         <h1>liste des Etudiants</h1>
+        <style>
+            body{
+                background-color:beige;
+                font-family: Arial, sans-serif;
+            }
+            th{
+                color: red ;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+            h1{
+                color: blue;
+                text-align: center;
+                font-family: italic;
+            }
+        </style>
         <table class="table table-bordered">
             <thead>
                 <tr>
