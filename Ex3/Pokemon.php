@@ -2,9 +2,9 @@
 require_once 'AttackPokemon.php';
 class Pokemon
 {
-    public function __construct(protected string $name="",
-    protected string $url="",
-    protected int $hp=0,
+    public function __construct(protected string $name,
+    protected string $url,
+    protected int $hp,
     protected AttackPokemon $attackPokemon){
 
     }
@@ -38,15 +38,14 @@ class Pokemon
         return $this->hp <= 0;
     }
 
-    public function attack(Pokemon $p){
+    public function attack(Pokemon &$p){
         $atk=mt_rand($this->attackPokemon->attackMinimal,$this->attackPokemon->attackMaximal);
         $special=mt_rand(1,100)<=$this->attackPokemon->probabilitySpecialAttack;
         if($special){
             $atk*=$this->attackPokemon->specialAttack;
         }
-        echo $atk;
         $p->setHp($p->getHp()-$atk);
-        return $p;
+        return $atk;
     }
     public function whoAmI(){
         echo $this->name;
