@@ -5,7 +5,7 @@ include 'fragments/header.php';
 ?>
 
 
-    <form method="post" action="processLogin.php" enctype="multipart/form-data">
+    <form method="post" action="Redirection.php" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="id" class="form-label">Id</label>
             <input type="text" class="form-control" name="id" id="id" >
