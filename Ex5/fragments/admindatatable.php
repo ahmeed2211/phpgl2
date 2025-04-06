@@ -1,12 +1,4 @@
 <?php
-
-try {
-    $db = new PDO("mysql:host=localhost;dbname=tpphp", "root", "houssem");
-    $query = $db->query("SELECT * FROM Etudiant");
-    $students = $query->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die("Erreur: " . $e->getMessage());
-}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -46,13 +38,13 @@ try {
 
 <div class="container">
 
-<!--    <div class="container mb-3">-->
-<!--        <form method="get" class="d-flex gap-2">-->
-<!--            <input type="text" name="search" class="form-control" placeholder="Rechercher par nom..." value="--><?php //= htmlspecialchars($searchTerm) ?><!--">-->
-<!--            <button type="submit" class="btn btn-primary">Filtrer</button>-->
-<!--            <a href="index.php" class="btn btn-secondary">Réinitialiser</a>-->
-<!--        </form>-->
-<!--    </div>-->
+    <div class="container mb-3">
+        <form method="get" class="d-flex gap-2 mb-3">
+            <input type="text" name="search" class=" w-20" placeholder="Veillez renseigner votre" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+            <button type="submit" class="btn btn-danger" >Filtrer</button>
+            <i class="bi bi-person-plus-fill"></i>
+        </form>
+    </div>
 
 
 
@@ -76,7 +68,7 @@ try {
                 <td><?= htmlspecialchars($student['name']) ?></td>
                 <td><?= $student['birthday'] ?></td>
                 <td><?= htmlspecialchars($student['section']) ?></td>
-                <td><i class="bi bi-info-circle-fill"></i></td>
+                <td><i class="bi bi-info-circle-fill"></i> <i class="bi bi-eraser"></i> <i class="bi bi-pencil-square"></i> </td>
             </tr>
         <?php endforeach; ?>
         </tbody>

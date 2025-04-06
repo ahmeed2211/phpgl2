@@ -57,7 +57,7 @@ try {
                 <td><?= $section['id'] ?></td>
                 <td><?= htmlspecialchars($section['designation']) ?></td>
                 <td><?= $section['description'] ?></td>
-                <td><i class="bi bi-info-circle-fill"></i></td>
+                <td><i class="bi bi-list-ol"></i></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
