@@ -2,8 +2,8 @@
 
 try {
     $db = new PDO("mysql:host=localhost;dbname=tpphp", "root", "houssem");
-    $query = $db->query("SELECT * FROM Etudiant");
-    $students = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query = $db->query("SELECT * FROM Section");
+    $sections = $query->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Erreur: " . $e->getMessage());
 }
@@ -12,7 +12,7 @@ try {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des étudiants</title>
+    <title>Liste des sections</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,27 +32,12 @@ try {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
-    <style>
-        .student-img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid #ddd;
-        }
     </style>
 </head>
 <body class="p-4">
 
 <div class="container">
 
-<!--    <div class="container mb-3">-->
-<!--        <form method="get" class="d-flex gap-2">-->
-<!--            <input type="text" name="search" class="form-control" placeholder="Rechercher par nom..." value="--><?php //= htmlspecialchars($searchTerm) ?><!--">-->
-<!--            <button type="submit" class="btn btn-primary">Filtrer</button>-->
-<!--            <a href="index.php" class="btn btn-secondary">Réinitialiser</a>-->
-<!--        </form>-->
-<!--    </div>-->
 
 
 
@@ -60,22 +45,18 @@ try {
         <thead>
         <tr>
             <th>ID</th>
-            <th>Image</th>
-            <th>Nom</th>
-            <th>Date de naissance</th>
-            <th>Section</th>
+            <th>Designation</th>
+            <th>Description</th>
             <th>Actions</th>
 
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($students as $student): ?>
+        <?php foreach ($sections as $section): ?>
             <tr>
-                <td><?= $student['id'] ?></td>
-                <td><img src="<?= htmlspecialchars($student['image_url']) ?>" class="student-img" alt="photo"></td>
-                <td><?= htmlspecialchars($student['name']) ?></td>
-                <td><?= $student['birthday'] ?></td>
-                <td><?= htmlspecialchars($student['section']) ?></td>
+                <td><?= $section['id'] ?></td>
+                <td><?= htmlspecialchars($section['designation']) ?></td>
+                <td><?= $section['description'] ?></td>
                 <td><i class="bi bi-info-circle-fill"></i></td>
             </tr>
         <?php endforeach; ?>
