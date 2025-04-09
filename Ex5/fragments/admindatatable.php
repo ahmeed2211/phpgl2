@@ -49,7 +49,7 @@ try {
         <form method="get" class="d-flex gap-2 mb-3">
             <input type="text" name="search" class=" w-20" placeholder="Veillez renseigner votre" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
             <button type="submit" class="btn btn-danger" >Filtrer</button>
-            <i class="bi bi-person-plus-fill"></i>
+            <a href='../fragments/addPage.php?>'><i class="bi bi-person-plus-fill"></i></a>
         </form>
     </div>
 
@@ -77,7 +77,7 @@ try {
                 <td><?= htmlspecialchars($student['section']) ?></td>
                 <td><a href='../fragments/detailEtudiant.php?id=<?= $student['id'] ?>'><i class="bi bi-info-circle-fill"></i></a>
                     <a href='../fragments/delete.php?id=<?= $student['id'] ?>'><i class="bi bi-eraser"></i></a>
-                    <i class="bi bi-pencil-square"></i> </td>
+                    <a href='../fragments/editPage.php?id=<?= $student['id'] ?>'><i class="bi bi-pencil-square"></i></a> </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
