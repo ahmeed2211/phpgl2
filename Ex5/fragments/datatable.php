@@ -64,7 +64,7 @@ try {
                 <td><?= htmlspecialchars($student['name']) ?></td>
                 <td><?= $student['birthday'] ?></td>
                 <td><?= htmlspecialchars($student['section']) ?></td>
-                <td><i class="bi bi-info-circle-fill"></i></td>
+                <td><a href='fragments/detailEtudiant.php?id=<?= $student['id'] ?>'><i class="bi bi-info-circle-fill"></i></a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

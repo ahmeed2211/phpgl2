@@ -1,4 +1,11 @@
 <?php
+try {
+    $db = new PDO("mysql:host=localhost;dbname=tpphp", "root", "houssem");
+    $query = $db->query("SELECT * FROM Etudiant");
+    $students = $query->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Erreur: " . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -68,7 +75,9 @@
                 <td><?= htmlspecialchars($student['name']) ?></td>
                 <td><?= $student['birthday'] ?></td>
                 <td><?= htmlspecialchars($student['section']) ?></td>
-                <td><i class="bi bi-info-circle-fill"></i> <i class="bi bi-eraser"></i> <i class="bi bi-pencil-square"></i> </td>
+                <td><a href='../fragments/detailEtudiant.php?id=<?= $student['id'] ?>'><i class="bi bi-info-circle-fill"></i></a>
+                    <a href='../fragments/delete.php?id=<?= $student['id'] ?>'><i class="bi bi-eraser"></i></a>
+                    <i class="bi bi-pencil-square"></i> </td>
             </tr>
         <?php endforeach; ?>
         </tbody>

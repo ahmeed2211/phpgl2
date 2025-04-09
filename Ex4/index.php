@@ -1,6 +1,6 @@
 <?php 
 try{
-    $base= new PDO("mysql:host=localhost;dbname=tpphp","root",'password');
+    $base= new PDO("mysql:host=localhost;dbname=tpphp","root",'houssem');
     echo "connection successful";
     $query = $base->query("SELECT * FROM Student");
     $students = $query->fetchAll(PDO::FETCH_ASSOC);

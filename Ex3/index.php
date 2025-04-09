@@ -15,7 +15,7 @@ $attacks=[
 $pokemons = [
     new Pokemon("Pikachu", "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png", 200, $attacks[1]),
     new Pokemon("Charizard", "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png", 200, $attacks[0]),
-    new PokemonPlante ("Bulbassauro", "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png", 200, $attacks[0])
+//    new PokemonPlante ("Bulbassauro", "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png", 200, $attacks[0])
 ];
 $round = 1;
 $maxRounds = 100;

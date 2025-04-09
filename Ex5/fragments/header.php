@@ -12,7 +12,7 @@
         if (isset($pageTitle)) {
             echo $pageTitle;
         } else {
-            echo 'GL2RT2';
+            echo 'Document';
         }
         ?>
     </title>
